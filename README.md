@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Stadium Ticket Reservation System
 
 A full-stack implementation of the Dire Dawa Stadium Ticket Management System
@@ -119,3 +120,6 @@ land on the right dashboard for that role.
   the Vite proxy handles it.
 - `backend/database/schema.sql` is idempotent (`CREATE TABLE IF NOT EXISTS`)
   and safe to re-run.
+=======
+# stadium-ticket-system
+>>>>>>> b18e88480bf04c0bb18265df63e01e7a7ef5eb78
