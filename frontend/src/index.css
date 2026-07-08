@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-pitch-night text-chalk;
+    background-image: radial-gradient(120% 120% at 15% -10%, rgba(245,179,1,0.12) 0%, rgba(11,31,23,0) 55%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-flood text-pitch-night;
+  }
+  *:focus-visible {
+    outline: 2px solid #F5B301;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .label-eyebrow {
+    @apply font-mono text-[11px] tracking-[0.2em] uppercase text-flood/90;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-flood px-5 py-2.5
+           font-body font-semibold text-pitch-night transition
+           hover:bg-flood-soft active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-pitch-line
+           bg-pitch-ink px-5 py-2.5 font-body font-semibold text-chalk transition
+           hover:border-flood/60 hover:text-flood active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-alert/40
+           bg-alert/10 px-5 py-2.5 font-body font-semibold text-alert transition
+           hover:bg-alert/20 active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .card {
+    @apply rounded-xl border border-pitch-line bg-pitch-ink/80 backdrop-blur-sm;
+  }
+
+  .input-field {
+    @apply w-full rounded-md border border-pitch-line bg-pitch-night px-3.5 py-2.5
+           font-body text-chalk placeholder:text-chalk-dim/40
+           focus:border-flood focus:outline-none transition;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-mono uppercase tracking-wide;
+  }
+
+  .pill-available { @apply border-pitch-bright/40 bg-pitch-bright/10 text-pitch-bright; }
+  .pill-pending   { @apply border-flood/40 bg-flood/10 text-flood; }
+  .pill-closed    { @apply border-chalk-dim/30 bg-chalk-dim/10 text-chalk-dim; }
+  .pill-danger    { @apply border-alert/40 bg-alert/10 text-alert; }
+}
